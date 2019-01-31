@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBD42CE0220303A500D8F03A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42CDF220303A500D8F03A /* AppDelegate.swift */; };
+		DBD42CE2220303A500D8F03A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42CE1220303A500D8F03A /* ViewController.swift */; };
+		DBD42CE5220303A500D8F03A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD42CE3220303A500D8F03A /* Main.storyboard */; };
+		DBD42CE7220303A700D8F03A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD42CE6220303A700D8F03A /* Assets.xcassets */; };
+		DBD42CEA220303A700D8F03A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */; };
+		DBD42CF5220303A700D8F03A /* Hangers_iOS_MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42CF4220303A700D8F03A /* Hangers_iOS_MessengerTests.swift */; };
+		DBD42D00220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42CFF220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBD42CF1220303A700D8F03A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD42CD4220303A500D8F03A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD42CDB220303A500D8F03A;
+			remoteInfo = "Hangers-iOS-Messenger";
+		};
+		DBD42CFC220303A700D8F03A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD42CD4220303A500D8F03A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD42CDB220303A500D8F03A;
+			remoteInfo = "Hangers-iOS-Messenger";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DBD42CDC220303A500D8F03A /* Hangers-iOS-Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangers-iOS-Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD42CDF220303A500D8F03A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBD42CE1220303A500D8F03A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBD42CE4220303A500D8F03A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBD42CE6220303A700D8F03A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBD42CE9220303A700D8F03A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBD42CEB220303A700D8F03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD42CF0220303A700D8F03A /* Hangers-iOS-MessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hangers-iOS-MessengerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD42CF4220303A700D8F03A /* Hangers_iOS_MessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangers_iOS_MessengerTests.swift; sourceTree = "<group>"; };
+		DBD42CF6220303A700D8F03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD42CFB220303A700D8F03A /* Hangers-iOS-MessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hangers-iOS-MessengerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD42CFF220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangers_iOS_MessengerUITests.swift; sourceTree = "<group>"; };
+		DBD42D01220303A700D8F03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBD42CD9220303A500D8F03A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD42CED220303A700D8F03A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD42CF8220303A700D8F03A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBD42CD3220303A500D8F03A = {
+			isa = PBXGroup;
+			children = (
+				DBD42CDE220303A500D8F03A /* Hangers-iOS-Messenger */,
+				DBD42CF3220303A700D8F03A /* Hangers-iOS-MessengerTests */,
+				DBD42CFE220303A700D8F03A /* Hangers-iOS-MessengerUITests */,
+				DBD42CDD220303A500D8F03A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBD42CDD220303A500D8F03A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42CDC220303A500D8F03A /* Hangers-iOS-Messenger.app */,
+				DBD42CF0220303A700D8F03A /* Hangers-iOS-MessengerTests.xctest */,
+				DBD42CFB220303A700D8F03A /* Hangers-iOS-MessengerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBD42CDE220303A500D8F03A /* Hangers-iOS-Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42CDF220303A500D8F03A /* AppDelegate.swift */,
+				DBD42CE1220303A500D8F03A /* ViewController.swift */,
+				DBD42CE3220303A500D8F03A /* Main.storyboard */,
+				DBD42CE6220303A700D8F03A /* Assets.xcassets */,
+				DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */,
+				DBD42CEB220303A700D8F03A /* Info.plist */,
+			);
+			path = "Hangers-iOS-Messenger";
+			sourceTree = "<group>";
+		};
+		DBD42CF3220303A700D8F03A /* Hangers-iOS-MessengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42CF4220303A700D8F03A /* Hangers_iOS_MessengerTests.swift */,
+				DBD42CF6220303A700D8F03A /* Info.plist */,
+			);
+			path = "Hangers-iOS-MessengerTests";
+			sourceTree = "<group>";
+		};
+		DBD42CFE220303A700D8F03A /* Hangers-iOS-MessengerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42CFF220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift */,
+				DBD42D01220303A700D8F03A /* Info.plist */,
+			);
+			path = "Hangers-iOS-MessengerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBD42CDB220303A500D8F03A /* Hangers-iOS-Messenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD42D04220303A700D8F03A /* Build configuration list for PBXNativeTarget "Hangers-iOS-Messenger" */;
+			buildPhases = (
+				DBD42CD8220303A500D8F03A /* Sources */,
+				DBD42CD9220303A500D8F03A /* Frameworks */,
+				DBD42CDA220303A500D8F03A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hangers-iOS-Messenger";
+			productName = "Hangers-iOS-Messenger";
+			productReference = DBD42CDC220303A500D8F03A /* Hangers-iOS-Messenger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBD42CEF220303A700D8F03A /* Hangers-iOS-MessengerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD42D07220303A700D8F03A /* Build configuration list for PBXNativeTarget "Hangers-iOS-MessengerTests" */;
+			buildPhases = (
+				DBD42CEC220303A700D8F03A /* Sources */,
+				DBD42CED220303A700D8F03A /* Frameworks */,
+				DBD42CEE220303A700D8F03A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBD42CF2220303A700D8F03A /* PBXTargetDependency */,
+			);
+			name = "Hangers-iOS-MessengerTests";
+			productName = "Hangers-iOS-MessengerTests";
+			productReference = DBD42CF0220303A700D8F03A /* Hangers-iOS-MessengerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DBD42CFA220303A700D8F03A /* Hangers-iOS-MessengerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD42D0A220303A700D8F03A /* Build configuration list for PBXNativeTarget "Hangers-iOS-MessengerUITests" */;
+			buildPhases = (
+				DBD42CF7220303A700D8F03A /* Sources */,
+				DBD42CF8220303A700D8F03A /* Frameworks */,
+				DBD42CF9220303A700D8F03A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBD42CFD220303A700D8F03A /* PBXTargetDependency */,
+			);
+			name = "Hangers-iOS-MessengerUITests";
+			productName = "Hangers-iOS-MessengerUITests";
+			productReference = DBD42CFB220303A700D8F03A /* Hangers-iOS-MessengerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBD42CD4220303A500D8F03A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = me;
+				TargetAttributes = {
+					DBD42CDB220303A500D8F03A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DBD42CEF220303A700D8F03A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DBD42CDB220303A500D8F03A;
+					};
+					DBD42CFA220303A700D8F03A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DBD42CDB220303A500D8F03A;
+					};
+				};
+			};
+			buildConfigurationList = DBD42CD7220303A500D8F03A /* Build configuration list for PBXProject "Hangers-iOS-Messenger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBD42CD3220303A500D8F03A;
+			productRefGroup = DBD42CDD220303A500D8F03A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBD42CDB220303A500D8F03A /* Hangers-iOS-Messenger */,
+				DBD42CEF220303A700D8F03A /* Hangers-iOS-MessengerTests */,
+				DBD42CFA220303A700D8F03A /* Hangers-iOS-MessengerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBD42CDA220303A500D8F03A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD42CEA220303A700D8F03A /* LaunchScreen.storyboard in Resources */,
+				DBD42CE7220303A700D8F03A /* Assets.xcassets in Resources */,
+				DBD42CE5220303A500D8F03A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD42CEE220303A700D8F03A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD42CF9220303A700D8F03A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBD42CD8220303A500D8F03A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD42CE2220303A500D8F03A /* ViewController.swift in Sources */,
+				DBD42CE0220303A500D8F03A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD42CEC220303A700D8F03A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD42CF5220303A700D8F03A /* Hangers_iOS_MessengerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD42CF7220303A700D8F03A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD42D00220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBD42CF2220303A700D8F03A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD42CDB220303A500D8F03A /* Hangers-iOS-Messenger */;
+			targetProxy = DBD42CF1220303A700D8F03A /* PBXContainerItemProxy */;
+		};
+		DBD42CFD220303A700D8F03A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD42CDB220303A500D8F03A /* Hangers-iOS-Messenger */;
+			targetProxy = DBD42CFC220303A700D8F03A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DBD42CE3220303A500D8F03A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBD42CE4220303A500D8F03A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBD42CE9220303A700D8F03A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DBD42D02220303A700D8F03A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DBD42D03220303A700D8F03A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DBD42D05220303A700D8F03A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WK7G7TU3;
+				INFOPLIST_FILE = "Hangers-iOS-Messenger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Hangers-iOS-Messenger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBD42D06220303A700D8F03A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WK7G7TU3;
+				INFOPLIST_FILE = "Hangers-iOS-Messenger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Hangers-iOS-Messenger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DBD42D08220303A700D8F03A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WK7G7TU3;
+				INFOPLIST_FILE = "Hangers-iOS-MessengerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Hangers-iOS-MessengerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hangers-iOS-Messenger.app/Hangers-iOS-Messenger";
+			};
+			name = Debug;
+		};
+		DBD42D09220303A700D8F03A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WK7G7TU3;
+				INFOPLIST_FILE = "Hangers-iOS-MessengerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Hangers-iOS-MessengerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hangers-iOS-Messenger.app/Hangers-iOS-Messenger";
+			};
+			name = Release;
+		};
+		DBD42D0B220303A700D8F03A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WK7G7TU3;
+				INFOPLIST_FILE = "Hangers-iOS-MessengerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Hangers-iOS-MessengerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Hangers-iOS-Messenger";
+			};
+			name = Debug;
+		};
+		DBD42D0C220303A700D8F03A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24WK7G7TU3;
+				INFOPLIST_FILE = "Hangers-iOS-MessengerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Hangers-iOS-MessengerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Hangers-iOS-Messenger";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBD42CD7220303A500D8F03A /* Build configuration list for PBXProject "Hangers-iOS-Messenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD42D02220303A700D8F03A /* Debug */,
+				DBD42D03220303A700D8F03A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD42D04220303A700D8F03A /* Build configuration list for PBXNativeTarget "Hangers-iOS-Messenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD42D05220303A700D8F03A /* Debug */,
+				DBD42D06220303A700D8F03A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD42D07220303A700D8F03A /* Build configuration list for PBXNativeTarget "Hangers-iOS-MessengerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD42D08220303A700D8F03A /* Debug */,
+				DBD42D09220303A700D8F03A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD42D0A220303A700D8F03A /* Build configuration list for PBXNativeTarget "Hangers-iOS-MessengerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD42D0B220303A700D8F03A /* Debug */,
+				DBD42D0C220303A700D8F03A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBD42CD4220303A500D8F03A /* Project object */;
+}
