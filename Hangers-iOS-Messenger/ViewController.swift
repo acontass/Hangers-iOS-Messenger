@@ -14,11 +14,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messagesTableView: UITableView!
-    
+    @IBOutlet weak var tablviewBottomConstraint: NSLayoutConstraint!
+
     private var messages = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageTextField.delegate = self
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: nil, using: { notification in
+            let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
+            self.tablviewBottomConstraint.constant = -keyboardSize.height + 64
+        })
+
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: nil, using: { notification in
+            self.tablviewBottomConstraint.constant = 0
+        })
     }
 
     @IBAction func connect() {
@@ -36,6 +46,8 @@ class ViewController: UIViewController {
                 self.sendButton.isEnabled = false
                 self.messageTextField.isEnabled = false
                 self.messageTextField.placeholder = "Connect before write message"
+                self.messages = []
+                self.messagesTableView.reloadData()
             }
         }
     }
@@ -43,6 +55,7 @@ class ViewController: UIViewController {
     @IBAction func sendTouched() {
         if let text = messageTextField.text {
             SocketManager.shared.send(str: text) {
+                self.view.endEditing(true)
                 self.messageTextField.text = ""
                 var validatedText = String()
                 while validatedText == "" {
@@ -71,6 +84,14 @@ extension ViewController: UITableViewDataSource {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "MessageCell")
         cell.textLabel?.text = messages[indexPath.row]
         return cell
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        sendTouched()
+        return true
     }
 }
 

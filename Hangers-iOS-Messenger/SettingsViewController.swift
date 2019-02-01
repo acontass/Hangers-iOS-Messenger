@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        portField.text = "\(SettingsManager.port)"
+        ipField.text = SettingsManager.ipAddress
     }
 
     @IBAction func saveTouched() {

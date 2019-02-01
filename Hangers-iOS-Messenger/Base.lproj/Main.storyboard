@@ -90,6 +90,7 @@
                         <outlet property="messageTextField" destination="G2h-X9-WOr" id="R2Z-jg-8FI"/>
                         <outlet property="messagesTableView" destination="3WB-TB-xSd" id="LYU-zH-LQu"/>
                         <outlet property="sendButton" destination="6Dp-pF-oh3" id="OY6-Q3-C0L"/>
+                        <outlet property="tablviewBottomConstraint" destination="MmK-EW-2XO" id="kSr-AE-5r7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
