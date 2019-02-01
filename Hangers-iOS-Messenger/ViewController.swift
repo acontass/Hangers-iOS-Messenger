@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
     @IBAction func connect() {
         if !SocketManager.shared.isConnected {
-            SocketManager.shared.connect(url: "127.0.0.1", port: 4242) {
+            SocketManager.shared.connect(url: SettingsManager.ipAddress, port: SettingsManager.port) {
                 connectionButton.title = SocketManager.shared.isConnected ? "Disconnect" : "Connect"
                 messageTextField.placeholder = SocketManager.shared.isConnected ? "Type your message" : "Connect before type messages"
                 sendButton.isEnabled = SocketManager.shared.isConnected
@@ -44,9 +44,13 @@ class ViewController: UIViewController {
         if let text = messageTextField.text {
             SocketManager.shared.send(str: text) {
                 self.messageTextField.text = ""
-                SocketManager.shared.read(size: 1024) { receivedText in
-                    self.messages = receivedText.components(separatedBy: "\n")
-                    self.messagesTableView.reloadData()
+                var validatedText = String()
+                while validatedText == "" {
+                    SocketManager.shared.read(size: 1024) { receivedText in
+                        validatedText = receivedText
+                        self.messages = receivedText.components(separatedBy: "\n")
+                        self.messagesTableView.reloadData()
+                    }
                 }
             }
         }
@@ -60,7 +64,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count - 1
+        return messages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

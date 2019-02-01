@@ -18,6 +18,8 @@
 		DBD42CF5220303A700D8F03A /* Hangers_iOS_MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42CF4220303A700D8F03A /* Hangers_iOS_MessengerTests.swift */; };
 		DBD42D00220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42CFF220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift */; };
 		DBD42D0E2203088D00D8F03A /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D0D2203088D00D8F03A /* SocketManager.swift */; };
+		DBD42D112204587100D8F03A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D102204587100D8F03A /* SettingsViewController.swift */; };
+		DBD42D1322045B4200D8F03A /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D1222045B4200D8F03A /* SettingsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		DBD42CFF220303A700D8F03A /* Hangers_iOS_MessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangers_iOS_MessengerUITests.swift; sourceTree = "<group>"; };
 		DBD42D01220303A700D8F03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD42D0D2203088D00D8F03A /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		DBD42D102204587100D8F03A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DBD42D1222045B4200D8F03A /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		DDCB7B568A79397725C7F871 /* Pods-Hangers-iOS-MessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hangers-iOS-MessengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hangers-iOS-MessengerTests/Pods-Hangers-iOS-MessengerTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2233F2B9247E1126CBE2046 /* Pods_Hangers_iOS_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hangers_iOS_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,6 +150,8 @@
 				DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */,
 				DBD42CEB220303A700D8F03A /* Info.plist */,
 				DBD42D0D2203088D00D8F03A /* SocketManager.swift */,
+				DBD42D102204587100D8F03A /* SettingsViewController.swift */,
+				DBD42D1222045B4200D8F03A /* SettingsManager.swift */,
 			);
 			path = "Hangers-iOS-Messenger";
 			sourceTree = "<group>";
@@ -379,8 +385,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD42CE2220303A500D8F03A /* ViewController.swift in Sources */,
+				DBD42D1322045B4200D8F03A /* SettingsManager.swift in Sources */,
 				DBD42D0E2203088D00D8F03A /* SocketManager.swift in Sources */,
 				DBD42CE0220303A500D8F03A /* AppDelegate.swift in Sources */,
+				DBD42D112204587100D8F03A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

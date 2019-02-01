@@ -74,6 +74,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Little Chat" id="m6S-UT-olJ">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="I6I-1k-pfq">
+                            <connections>
+                                <segue destination="nme-vh-Amg" kind="show" id="fSv-PA-oLI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="qUj-Ee-m49">
                             <connections>
                                 <action selector="connect" destination="BYZ-38-t0r" id="dwA-bt-Uva"/>
@@ -90,6 +95,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="25.637181409295355"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="zm7-Yw-3hQ">
+            <objects>
+                <viewController id="nme-vh-Amg" customClass="SettingsViewController" customModule="Hangers_iOS_Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfV-v3-BBd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="127.0.0.1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9C8-ng-yQc">
+                                <rect key="frame" x="118" y="318.5" width="139.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139.5" id="r8y-bK-VwN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be9-cP-vk2">
+                                <rect key="frame" x="23" y="255" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ip address :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKb-lY-CWt">
+                                <rect key="frame" x="23" y="323" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-vL-PzJ">
+                                <rect key="frame" x="170.5" y="371" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTouched" destination="nme-vh-Amg" eventType="touchUpInside" id="TK9-V6-7Ru"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4242" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djM-Tp-ckM">
+                                <rect key="frame" x="75" y="250" width="118" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="dhw-10-JNo"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9C8-ng-yQc" firstAttribute="top" secondItem="djM-Tp-ckM" secondAttribute="bottom" constant="38.5" id="35C-P7-l53"/>
+                            <constraint firstItem="OCM-vL-PzJ" firstAttribute="top" secondItem="9C8-ng-yQc" secondAttribute="bottom" constant="22.5" id="CAX-wi-keo"/>
+                            <constraint firstItem="OCM-vL-PzJ" firstAttribute="centerX" secondItem="jfV-v3-BBd" secondAttribute="centerX" id="Eg4-jl-Qtd"/>
+                            <constraint firstItem="QKb-lY-CWt" firstAttribute="top" secondItem="be9-cP-vk2" secondAttribute="bottom" constant="47" id="Geo-4v-ipC"/>
+                            <constraint firstItem="sbz-dP-cai" firstAttribute="trailing" secondItem="djM-Tp-ckM" secondAttribute="trailing" constant="182" id="K3f-th-6Li"/>
+                            <constraint firstItem="QKb-lY-CWt" firstAttribute="centerY" secondItem="jfV-v3-BBd" secondAttribute="centerY" id="QZj-G4-td7"/>
+                            <constraint firstItem="djM-Tp-ckM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="be9-cP-vk2" secondAttribute="trailing" constant="8" symbolic="YES" id="SVY-BX-eip"/>
+                            <constraint firstItem="9C8-ng-yQc" firstAttribute="centerY" secondItem="jfV-v3-BBd" secondAttribute="centerY" id="bAt-Mf-Xbf"/>
+                            <constraint firstItem="9C8-ng-yQc" firstAttribute="leading" secondItem="QKb-lY-CWt" secondAttribute="trailing" constant="6" id="f7r-P6-1QF"/>
+                            <constraint firstItem="be9-cP-vk2" firstAttribute="leading" secondItem="sbz-dP-cai" secondAttribute="leading" constant="23" id="huH-aN-IWl"/>
+                            <constraint firstItem="sbz-dP-cai" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9C8-ng-yQc" secondAttribute="trailing" symbolic="YES" id="w1y-OB-BMS"/>
+                            <constraint firstItem="QKb-lY-CWt" firstAttribute="leading" secondItem="sbz-dP-cai" secondAttribute="leading" constant="23" id="wdw-CQ-VPW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sbz-dP-cai"/>
+                    </view>
+                    <connections>
+                        <outlet property="ipField" destination="9C8-ng-yQc" id="8Q5-ZH-CWT"/>
+                        <outlet property="portField" destination="djM-Tp-ckM" id="TUS-eS-kU7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Djh-3O-cm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749.5999999999999" y="25.637181409295355"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="diB-nU-rBy">

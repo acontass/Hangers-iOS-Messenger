@@ -12,7 +12,7 @@ var server = net.createServer(function(socket) {
 			fs.readFile(`${__dirname}/chat.txt`, 'utf8', function(err, contents) {
 				if (err)
 					return
-				socket.write(contents)
+				socket.write(contents);
 			});
 		});
 	});
@@ -26,4 +26,4 @@ server.on('listening', function() {
 	console.log('Server runned on port 4242');
 })
 
-server.listen(4242, '127.0.0.1');
+server.listen(4242, '0.0.0.0');
