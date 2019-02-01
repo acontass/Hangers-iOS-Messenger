@@ -22,4 +22,8 @@ var server = net.createServer(function(socket) {
 	});
 });
 
+server.on('listening', function() {
+	console.log('Server runned on port 4242');
+})
+
 server.listen(4242, '127.0.0.1');

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
     @IBAction func connect() {
         if !SocketManager.shared.isConnected {
-            SocketManager.shared.connect(url: /*"172.16.125.129"*/"127.0.0.1", port: 4242) {
+            SocketManager.shared.connect(url: "127.0.0.1", port: 4242) {
                 connectionButton.title = SocketManager.shared.isConnected ? "Disconnect" : "Connect"
                 messageTextField.placeholder = SocketManager.shared.isConnected ? "Type your message" : "Connect before type messages"
                 sendButton.isEnabled = SocketManager.shared.isConnected
