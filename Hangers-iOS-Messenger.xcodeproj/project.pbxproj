@@ -144,14 +144,11 @@
 			isa = PBXGroup;
 			children = (
 				DBD42CDF220303A500D8F03A /* AppDelegate.swift */,
-				DBD42CE1220303A500D8F03A /* ViewController.swift */,
-				DBD42CE3220303A500D8F03A /* Main.storyboard */,
+				DBD42D142209978000D8F03A /* Managers */,
+				DBD42D162209979D00D8F03A /* Storyboards */,
+				DBD42D152209979000D8F03A /* Controllers */,
 				DBD42CE6220303A700D8F03A /* Assets.xcassets */,
-				DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */,
 				DBD42CEB220303A700D8F03A /* Info.plist */,
-				DBD42D0D2203088D00D8F03A /* SocketManager.swift */,
-				DBD42D102204587100D8F03A /* SettingsViewController.swift */,
-				DBD42D1222045B4200D8F03A /* SettingsManager.swift */,
 			);
 			path = "Hangers-iOS-Messenger";
 			sourceTree = "<group>";
@@ -172,6 +169,33 @@
 				DBD42D01220303A700D8F03A /* Info.plist */,
 			);
 			path = "Hangers-iOS-MessengerUITests";
+			sourceTree = "<group>";
+		};
+		DBD42D142209978000D8F03A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42D0D2203088D00D8F03A /* SocketManager.swift */,
+				DBD42D1222045B4200D8F03A /* SettingsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DBD42D152209979000D8F03A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42CE1220303A500D8F03A /* ViewController.swift */,
+				DBD42D102204587100D8F03A /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DBD42D162209979D00D8F03A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DBD42CE3220303A500D8F03A /* Main.storyboard */,
+				DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

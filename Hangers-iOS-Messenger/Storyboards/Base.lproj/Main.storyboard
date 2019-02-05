@@ -142,6 +142,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qLh-io-tiz">
+                                <rect key="frame" x="127" y="187" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="TCP"/>
+                                    <segment title="UDP"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -163,6 +171,7 @@
                     <connections>
                         <outlet property="ipField" destination="9C8-ng-yQc" id="8Q5-ZH-CWT"/>
                         <outlet property="portField" destination="djM-Tp-ckM" id="TUS-eS-kU7"/>
+                        <outlet property="protocolSegmentedControl" destination="qLh-io-tiz" id="STW-4Z-y7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Djh-3O-cm9" userLabel="First Responder" sceneMemberID="firstResponder"/>

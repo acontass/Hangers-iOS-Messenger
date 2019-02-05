@@ -12,14 +12,17 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var portField: UITextField!
     @IBOutlet weak var ipField: UITextField!
+    @IBOutlet weak var protocolSegmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         portField.text = "\(SettingsManager.port)"
         ipField.text = SettingsManager.ipAddress
+        protocolSegmentedControl.selectedSegmentIndex = (SettingsManager.chatProtocol == .TCP) ? 0 : 1
     }
 
     @IBAction func saveTouched() {
+        SocketManager.shared.disconnect()
         if let text = portField.text {
             SettingsManager.port = Int32(text) ?? 4242
             portField.text = "\(SettingsManager.port)"
@@ -27,5 +30,10 @@ class SettingsViewController: UIViewController {
         if let text = ipField.text {
             SettingsManager.ipAddress = text
         }
+        SettingsManager.chatProtocol = SettingsManager.eChatProtocol.init(rawValue: protocolSegmentedControl.titleForSegment(at: protocolSegmentedControl.selectedSegmentIndex)!)!
+        if (SettingsManager.chatProtocol == .UDP) {
+            SocketManager.shared.connect(url: SettingsManager.ipAddress, port: SettingsManager.port)
+        }
+        navigationController?.popViewController(animated: true)
     }
 }

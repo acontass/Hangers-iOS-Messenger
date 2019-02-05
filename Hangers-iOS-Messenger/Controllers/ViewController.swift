@@ -31,13 +31,21 @@ class ViewController: UIViewController {
         })
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        let flag = SettingsManager.chatProtocol == .UDP
+        connectionButton.title = (flag) ? nil : "Connect"
+        connectionButton.isEnabled = !flag
+        messageTextField.isEnabled = flag
+        sendButton.isEnabled = flag
+    }
+
     @IBAction func connect() {
         if !SocketManager.shared.isConnected {
             SocketManager.shared.connect(url: SettingsManager.ipAddress, port: SettingsManager.port) {
-                connectionButton.title = SocketManager.shared.isConnected ? "Disconnect" : "Connect"
-                messageTextField.placeholder = SocketManager.shared.isConnected ? "Type your message" : "Connect before type messages"
-                sendButton.isEnabled = SocketManager.shared.isConnected
-                messageTextField.isEnabled = SocketManager.shared.isConnected
+                self.connectionButton.title = SocketManager.shared.isConnected ? "Disconnect" : "Connect"
+                self.messageTextField.placeholder = SocketManager.shared.isConnected ? "Type your message" : "Connect before type messages"
+                self.sendButton.isEnabled = SocketManager.shared.isConnected
+                self.messageTextField.isEnabled = SocketManager.shared.isConnected
             }
         }
         else {
@@ -55,7 +63,6 @@ class ViewController: UIViewController {
     @IBAction func sendTouched() {
         if let text = messageTextField.text {
             SocketManager.shared.send(str: text) {
-                self.view.endEditing(true)
                 self.messageTextField.text = ""
                 var validatedText = String()
                 while validatedText == "" {
@@ -70,11 +77,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate {
-
-}
-
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
@@ -90,6 +93,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITextFieldDelegate {
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         sendTouched()
         return true
     }
