@@ -28,6 +28,7 @@ server.on('message', (message, remote) => {
 					console.log(error);
 					return;
 				}
+				server.send(`${contents.length}`, remote.port, remote.address);
 				server.send(contents, remote.port, remote.address);
 			});
 		});

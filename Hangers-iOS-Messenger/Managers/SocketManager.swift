@@ -62,16 +62,27 @@ class SocketManager: NSObject {
         }
     }
 
-    public func read(size: Int, completion: ((String) -> Void)? = nil) {
+    private let readSize: Int = 64
+
+    public func read(completion: ((String) -> Void)? = nil) {
         if SettingsManager.chatProtocol == .UDP {
-            let ret = udpClient?.recv(size)
+            var ret = udpClient?.recv(10)
             if let buff = ret?.0, let str = String(bytes: buff, encoding: .utf8) {
-                completion?(str)
+                ret = udpClient?.recv(Int(str)!)
+                if let buff = ret?.0, let str = String(bytes: buff, encoding: .utf8) {
+                    completion?(str)
+                }
             }
         }
         else {
-            if let buff = tcpClient?.read(size), let str = String(bytes: buff, encoding: .utf8) {
-                completion?(str)
+            var validatedText = String()
+            var allReceivedText = String()
+            while validatedText.count == 0 || validatedText.count == readSize {
+                if let buff = tcpClient?.read(readSize), let str = String(bytes: buff, encoding: .utf8) {
+                    validatedText = str
+                    allReceivedText.append(str)
+                }
+                completion?(allReceivedText)
             }
         }
     }

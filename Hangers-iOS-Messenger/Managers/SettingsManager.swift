@@ -17,5 +17,5 @@ struct SettingsManager {
 
     static public var port: Int32 = 4242
     static public var ipAddress: String = "127.0.0.1"
-    static public var chatProtocol: eChatProtocol = .TCP
+    static public var chatProtocol: eChatProtocol = .UDP
 }

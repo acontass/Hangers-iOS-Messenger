@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         portField.text = "\(SettingsManager.port)"
         ipField.text = SettingsManager.ipAddress
-        protocolSegmentedControl.selectedSegmentIndex = (SettingsManager.chatProtocol == .TCP) ? 0 : 1
+        protocolSegmentedControl.selectedSegmentIndex = (SettingsManager.chatProtocol == .UDP) ? 0 : 1
     }
 
     @IBAction func saveTouched() {

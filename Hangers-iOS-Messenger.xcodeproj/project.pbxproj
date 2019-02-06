@@ -20,6 +20,7 @@
 		DBD42D0E2203088D00D8F03A /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D0D2203088D00D8F03A /* SocketManager.swift */; };
 		DBD42D112204587100D8F03A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D102204587100D8F03A /* SettingsViewController.swift */; };
 		DBD42D1322045B4200D8F03A /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D1222045B4200D8F03A /* SettingsManager.swift */; };
+		DBD42D1A220B147400D8F03A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD42D19220B147400D8F03A /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		DBD42D0D2203088D00D8F03A /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		DBD42D102204587100D8F03A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DBD42D1222045B4200D8F03A /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		DBD42D19220B147400D8F03A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		DDCB7B568A79397725C7F871 /* Pods-Hangers-iOS-MessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hangers-iOS-MessengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hangers-iOS-MessengerTests/Pods-Hangers-iOS-MessengerTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2233F2B9247E1126CBE2046 /* Pods_Hangers_iOS_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hangers_iOS_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 			children = (
 				DBD42CE1220303A500D8F03A /* ViewController.swift */,
 				DBD42D102204587100D8F03A /* SettingsViewController.swift */,
+				DBD42D19220B147400D8F03A /* MessageTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,8 +195,8 @@
 		DBD42D162209979D00D8F03A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				DBD42CE3220303A500D8F03A /* Main.storyboard */,
 				DBD42CE8220303A700D8F03A /* LaunchScreen.storyboard */,
+				DBD42CE3220303A500D8F03A /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				DBD42D0E2203088D00D8F03A /* SocketManager.swift in Sources */,
 				DBD42CE0220303A500D8F03A /* AppDelegate.swift in Sources */,
 				DBD42D112204587100D8F03A /* SettingsViewController.swift in Sources */,
+				DBD42D1A220B147400D8F03A /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

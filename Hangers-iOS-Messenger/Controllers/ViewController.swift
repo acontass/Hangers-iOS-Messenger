@@ -20,6 +20,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        messagesTableView.rowHeight = UITableView.automaticDimension
+        messagesTableView.estimatedRowHeight = 44
         messageTextField.delegate = self
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: nil, using: { notification in
             let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: nil, using: { notification in
             self.tablviewBottomConstraint.constant = 0
         })
+
+        SocketManager.shared.connect(url: SettingsManager.ipAddress, port: SettingsManager.port)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,13 +68,9 @@ class ViewController: UIViewController {
         if let text = messageTextField.text {
             SocketManager.shared.send(str: text) {
                 self.messageTextField.text = ""
-                var validatedText = String()
-                while validatedText == "" {
-                    SocketManager.shared.read(size: 1024) { receivedText in
-                        validatedText = receivedText
-                        self.messages = receivedText.components(separatedBy: "\n")
-                        self.messagesTableView.reloadData()
-                    }
+                SocketManager.shared.read() { receivedText in
+                    self.messages = receivedText.components(separatedBy: "\n")
+                    self.messagesTableView.reloadData()
                 }
             }
         }
@@ -84,8 +84,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "MessageCell")
-        cell.textLabel?.text = messages[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
+        cell.messageLabel.text = messages[indexPath.row]
         return cell
     }
 }

@@ -8,7 +8,7 @@ var server = net.createServer((socket) => {
 	console.log('Client connected');
 
 	socket.on('data', (data) => {
-		console.log('Received text: ' + data.toString());
+		console.log(`${socket.remoteAddress}:${socket.remotePort} - ${data.toString()}`);
 		fs.appendFile(`${__dirname}/chat.txt`, data.toString() + '\n', (err) => {
     	if (err)
 			{
