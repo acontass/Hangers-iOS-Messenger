@@ -27,15 +27,17 @@ server.on('message', (message, remote) => {
 					return;
 				}
 //				console.log(contents.length);
+//			    console.log(Buffer.byteLength(contents, 'utf-8'));
 //				console.log(contents);
-				var client = dgram.createSocket('udp4');
-				client.send(`${contents.length}`, 0, `${contents.length}`.length, 4243, remote.address, function(err, bytes) {
+			    var client = dgram.createSocket('udp4');
+			    const size = Buffer.byteLength(contents, 'utf-8');
+				client.send(`${size}`, 0, `${size}`.length, 4243, remote.address, function(err, bytes) {
 					if (error) {
 						console.log(error);
 						return;
 					}
-				    console.log(`UDP file contents lenght (${contents.length} bytes) sent to ` + remote.address +':'+ 4243);
-						client.send(contents, 0, contents.length, 4243, remote.address, function(err, bytes) {
+				    console.log(`UDP file contents lenght (${size} bytes) sent to ` + remote.address +':'+ 4243);
+						client.send(contents, 0, size, 4243, remote.address, function(err, bytes) {
 						    if (err) throw err;
 						    console.log('UDP file contents sent to ' + remote.address +':'+ 4243);
 						    client.close();
