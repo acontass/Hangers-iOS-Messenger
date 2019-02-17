@@ -17,19 +17,30 @@ server.on('listening', () => {
 server.on('message', (message, remote) => {
     console.log(`${remote.address}:${remote.port} - ${message}`);
 		fs.appendFile(`${__dirname}/chat.txt`, `${message}\n`, (error) => {
-    	if (error)
-			{
+    	if (error) {
         	console.log(error);
 					return;
 			}
 			fs.readFile(`${__dirname}/chat.txt`, 'utf8', (error, contents) => {
-				if (error)
-				{
+				if (error) {
 					console.log(error);
 					return;
 				}
-				server.send(`${contents.length}`, remote.port, remote.address);
-				server.send(contents, remote.port, remote.address);
+//				console.log(contents.length);
+//				console.log(contents);
+				var client = dgram.createSocket('udp4');
+				client.send(`${contents.length}`, 0, `${contents.length}`.length, 4243, remote.address, function(err, bytes) {
+					if (error) {
+						console.log(error);
+						return;
+					}
+				    console.log(`UDP file contents lenght (${contents.length} bytes) sent to ` + remote.address +':'+ 4243);
+						client.send(contents, 0, contents.length, 4243, remote.address, function(err, bytes) {
+						    if (err) throw err;
+						    console.log('UDP file contents sent to ' + remote.address +':'+ 4243);
+						    client.close();
+						});
+				});
 			});
 		});
 });

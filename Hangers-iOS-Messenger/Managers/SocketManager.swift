@@ -9,6 +9,10 @@
 import Foundation
 import SwiftSocket
 
+public protocol SocketDelegate {
+    func didReceive(message: String)
+}
+
 class SocketManager: NSObject {
 
     /**
@@ -19,78 +23,48 @@ class SocketManager: NSObject {
         return SocketManager()
     }()
 
-    public private(set) var isConnected: Bool = false
-    public private(set) var tcpClient: TCPClient?
+    private let readSize: Int = 64
+
     public private(set) var udpClient: UDPClient?
 
-    public func connect(url: String, port: Int32, completion: (() -> Void)? = nil) {
-        if SettingsManager.chatProtocol == .UDP {
-            udpClient = UDPClient(address: url, port: port)
-            isConnected = true
-            completion?()
-        }
-        else {
-            tcpClient = TCPClient(address: url, port: port)
-            switch tcpClient!.connect(timeout: 4) {
-            case .success:
-                isConnected = true
-                completion?()
-            case .failure(let error):
-                isConnected = false
-                debugPrint(error.localizedDescription)
-                completion?()
+    private var serverUdpQueue = DispatchQueue(label: "SEREVER_UDP_QUEUE", qos: .background)
+
+    private var serverUdp: UDPServer?
+
+    public var delegate: SocketDelegate?
+
+    public func connect() {
+        serverUdp = UDPServer(address: "0.0.0.0", port: SettingsManager.serverPort)
+        serverUdpQueue.async {
+            while (true) {
+                if self.serverUdp?.fd == nil {
+                    break
+                }
+                if let ret = self.serverUdp?.recv(self.readSize), let buff = ret.0, let str = String(bytes: buff, encoding: .utf8), let size = Int(str) {
+//                    debugPrint("READ SIZE = \(str) --> \(size)")
+                    if let ret2 = self.serverUdp?.recv(size), let buff = ret2.0, let str = String(bytes: buff, encoding: .utf8) {
+                        DispatchQueue.main.async {
+//                            debugPrint(str)
+                            self.delegate?.didReceive(message: str)
+                        }
+                    }
+                }
             }
         }
+        udpClient = UDPClient(address: SettingsManager.clientIpAddress, port: SettingsManager.clientPort)
     }
 
     public func send(str: String, completion: (() -> Void)? = nil) {
-        if SettingsManager.chatProtocol == .UDP {
-            switch udpClient!.send(string: str) {
-            case .success:
-                completion?()
-            case .failure(let e):
-                debugPrint(e.localizedDescription)
-            }
-        }
-        else {
-            switch tcpClient!.send(string: str) {
-            case .success:
-                completion?()
-            case .failure(let e):
-                debugPrint(e.localizedDescription)
-            }
+        switch udpClient!.send(string: str) {
+        case .success:
+            completion?()
+        case .failure(let e):
+            debugPrint(e.localizedDescription)
         }
     }
 
-    private let readSize: Int = 64
-
-    public func read(completion: ((String) -> Void)? = nil) {
-        if SettingsManager.chatProtocol == .UDP {
-            var ret = udpClient?.recv(10)
-            if let buff = ret?.0, let str = String(bytes: buff, encoding: .utf8) {
-                ret = udpClient?.recv(Int(str)!)
-                if let buff = ret?.0, let str = String(bytes: buff, encoding: .utf8) {
-                    completion?(str)
-                }
-            }
-        }
-        else {
-            var validatedText = String()
-            var allReceivedText = String()
-            while validatedText.count == 0 || validatedText.count == readSize {
-                if let buff = tcpClient?.read(readSize), let str = String(bytes: buff, encoding: .utf8) {
-                    validatedText = str
-                    allReceivedText.append(str)
-                }
-                completion?(allReceivedText)
-            }
-        }
-    }
-
-    public func disconnect(completion: (() -> Void)? = nil) {
-        tcpClient?.close()
+    public func disconnect() {
+        serverUdp?.close()
         udpClient?.close()
-        isConnected = false
-        completion?()
     }
 }

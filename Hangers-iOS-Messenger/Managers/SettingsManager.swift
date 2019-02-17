@@ -10,12 +10,9 @@ import Foundation
 
 struct SettingsManager {
 
-    public enum eChatProtocol: String {
-        case TCP
-        case UDP
-    }
+    static public var clientPort: Int32 = 4242
+    static public var clientIpAddress: String = "192.168.1.21"
 
-    static public var port: Int32 = 4242
-    static public var ipAddress: String = "127.0.0.1"
-    static public var chatProtocol: eChatProtocol = .UDP
+    static public var serverPort: Int32 = 4243
+    
 }

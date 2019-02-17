@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var connectionButton: UIBarButtonItem!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messagesTableView: UITableView!
@@ -20,58 +19,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SocketManager.shared.delegate = self
         messagesTableView.rowHeight = UITableView.automaticDimension
         messagesTableView.estimatedRowHeight = 44
         messageTextField.delegate = self
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: nil, using: { notification in
             let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
-            self.tablviewBottomConstraint.constant = -keyboardSize.height + 64
+            self.tablviewBottomConstraint.constant = -keyboardSize.height
         })
 
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: nil, using: { notification in
             self.tablviewBottomConstraint.constant = 0
         })
 
-        SocketManager.shared.connect(url: SettingsManager.ipAddress, port: SettingsManager.port)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        let flag = SettingsManager.chatProtocol == .UDP
-        connectionButton.title = (flag) ? nil : "Connect"
-        connectionButton.isEnabled = !flag
-        messageTextField.isEnabled = flag
-        sendButton.isEnabled = flag
-    }
-
-    @IBAction func connect() {
-        if !SocketManager.shared.isConnected {
-            SocketManager.shared.connect(url: SettingsManager.ipAddress, port: SettingsManager.port) {
-                self.connectionButton.title = SocketManager.shared.isConnected ? "Disconnect" : "Connect"
-                self.messageTextField.placeholder = SocketManager.shared.isConnected ? "Type your message" : "Connect before type messages"
-                self.sendButton.isEnabled = SocketManager.shared.isConnected
-                self.messageTextField.isEnabled = SocketManager.shared.isConnected
-            }
-        }
-        else {
-            SocketManager.shared.disconnect() {
-                self.connectionButton.title = "Connect"
-                self.sendButton.isEnabled = false
-                self.messageTextField.isEnabled = false
-                self.messageTextField.placeholder = "Connect before write message"
-                self.messages = []
-                self.messagesTableView.reloadData()
-            }
-        }
+        SocketManager.shared.connect()
     }
 
     @IBAction func sendTouched() {
         if let text = messageTextField.text {
             SocketManager.shared.send(str: text) {
                 self.messageTextField.text = ""
-                SocketManager.shared.read() { receivedText in
-                    self.messages = receivedText.components(separatedBy: "\n")
-                    self.messagesTableView.reloadData()
-                }
             }
         }
     }
@@ -93,9 +60,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController: UITextFieldDelegate {
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
         sendTouched()
         return true
     }
+}
+
+extension ViewController: SocketDelegate {
+
+    public func didReceive(message: String) {
+        self.messages = message.components(separatedBy: "\n")
+        self.messagesTableView.reloadData()
+        messagesTableView.scrollToRow(at: IndexPath(row: messages.count - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: true)
+    }
+
 }
 
